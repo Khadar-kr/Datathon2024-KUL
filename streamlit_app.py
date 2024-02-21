@@ -9,7 +9,9 @@ def main():
     # params = st.experimental_get_query_params()
     # params1=st.query_params.to_dict()
     if "lat1" in st.query_params and st.query_params["lat1"] is not None:
-        lat1_value =st.query_params["lat1"]
+        lat1_value = 51.213231907768254
+    # long1_value= 4.424526343527039
+    # lat1_value =st.query_params["lat1"]
     if "long1" in st.query_params and st.query_params["long1"] is not None:
         long1_value =st.query_params["long1"]
     
@@ -50,8 +52,8 @@ def haversine(lat1, lon1, lat2, lon2):
     R = 6371000  # radius of Earth in meters
     phi_1 = math.radians(lat1)
     phi_2 = math.radians(lat2)
-    delta_phi = math.radians(lat2 - lat1)
-    delta_lambda = math.radians(lon2 - lon1)
+    delta_phi = math.radians(abs(lat2 - lat1))
+    delta_lambda = math.radians(abs(lon2 - lon1))
     a = math.sin(delta_phi / 2.0) * 2 + math.cos(phi_1) * math.cos(phi_2) * math.sin(delta_lambda / 2.0) * 2
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
     meters = R * c  # output distance in meters
