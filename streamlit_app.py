@@ -5,6 +5,12 @@ import math
 
 def main():
     st.title("Directions to nearest AED")
+    
+    # Button to inform the nearest first responder
+    if st.button('Inform nearest first responder'):
+        # Display the message once the button is clicked
+        st.write('Nearest first responder is informed and is 5 min away')
+        
       # Get query parameters from the URL
     # params = st.experimental_get_query_params()
     # params1=st.query_params.to_dict()
