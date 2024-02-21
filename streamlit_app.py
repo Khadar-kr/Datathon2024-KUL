@@ -31,7 +31,7 @@ def main():
 
 
     # Render the iframe
-    st.write("<iframe ", f"src=https://www.google.com/maps/embed/v1/directions?key=AIzaSyBMON2WBju7Gd7G2UY_P60O-wNHvs6u6V4&origin={lat1_value},{long1_value}&destination={lat2_value},{long2_value}&mode=walking&avoid=tolls|highways", f"height=500", 'width="100%" ', 'frameborder="0" ', 'scrolling="no" ', 'allowfullscreen></iframe>', unsafe_allow_html=True)
+    st.write("<iframe ", f"src=https://www.google.com/maps/embed/v1/directions?key={your_api_key}&origin={lat1_value},{long1_value}&destination={lat2_value},{long2_value}&mode=walking&avoid=tolls|highways", f"height=500", 'width="100%" ', 'frameborder="0" ', 'scrolling="no" ', 'allowfullscreen></iframe>', unsafe_allow_html=True)
 
 def fetch_least_distance(lat,long):
     # Read the .xls file
